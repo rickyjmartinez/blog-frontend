@@ -1,21 +1,21 @@
 
 export function PostNew() {
   return (
-    <div id="posts-new">
+    <div id="posts-new" >
       <h1>New post</h1>
 
       <form>
         <label>Title:</label><br />
-        <input type="text"></input>
+        <input type="text" placeholder="Title of blog"></input>
         <br />
         <label>Body: </label><br />
-        <input type="text"></input>
+        <input type="text" placeholder="blog goes here"></input>
         <br />
         <label>Image: </label><br />
-        <input type="text"></input>
+        <input type="text" placeholder="image URL"></input>
         <br/>
         <br />
-        <input type="submit" value="Submit"></input>
+        <button type="button" class="btn btn-primary btn-lg">Submit</button>
       </form>
     </div>
   );

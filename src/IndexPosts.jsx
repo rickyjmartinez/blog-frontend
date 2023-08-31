@@ -42,9 +42,9 @@ export function IndexPosts(props) {
           <p>{post.body}</p>
           <button onClick={() => props.onShowPost(post)}>More info</button>
         </div>
-      ))}
-
-
+       ))}
     </div>
-  );
+  )
 }
+
+
