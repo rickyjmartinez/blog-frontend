@@ -5,14 +5,17 @@ export function PostNew() {
       <h1>New post</h1>
 
       <form>
-        <label>Title:</label>
+        <label>Title:</label><br />
         <input type="text"></input>
-        <br></br>
-        <label>Body:</label>
+        <br />
+        <label>Body: </label><br />
         <input type="text"></input>
-        <br></br>
-        <label>Image:</label>
+        <br />
+        <label>Image: </label><br />
         <input type="text"></input>
+        <br/>
+        <br />
+        <input type="submit" value="Submit"></input>
       </form>
     </div>
   );

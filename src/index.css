@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+#root {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
