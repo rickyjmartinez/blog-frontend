@@ -5,6 +5,7 @@ export function IndexPosts(props) {
   console.log(props);
   return (
     <div id="posts-index">
+      <br /> 
       <h1>All posts</h1>
       
 
@@ -34,6 +35,7 @@ export function IndexPosts(props) {
               <span className="visually-hidden">Next</span>
             </button>
           </div>
+          <br /> 
 
       {props.posts.map((post) => (
         <div key={post.id} className="posts">
