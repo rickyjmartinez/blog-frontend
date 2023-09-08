@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export function Signup() {
   const [errors, setErrors] = useState([]);
+  const [name, setName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,7 +14,7 @@ export function Signup() {
       .then((response) => {
         console.log(response.data);
         event.target.reset();
-        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/posts"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
         console.log(error.response.data.errors);
@@ -31,10 +32,16 @@ export function Signup() {
       </ul>
       <form onSubmit={handleSubmit}>
         <div>
-          Name: <input name="name" type="text" />
+          Name: <input name="name" type="text" value={name} onChange={(event) => setName(event.target.value)} />
+          {name.length > 20 ? (
+            <small className="text-danger">name is too long</small>
+          ) : (
+            <small className="text-success">{20 - name.length} Characters remaining</small>
+          )}
         </div>
         <div>
-          Email: <input name="email" type="email" />
+          Email: <input name="email" type="email" placeholder="email address" />
+          <small>@(email).com required</small>
         </div>
         <div>
           Password: <input name="password" type="password" />

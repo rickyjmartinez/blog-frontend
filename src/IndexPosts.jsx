@@ -43,6 +43,7 @@ export function IndexPosts(props) {
           <img src={post.image} alt="" />
           <p>{post.body}</p>
           <button onClick={() => props.onShowPost(post)}>More info</button>
+          <a href={`/posts/${post.id}`}>Go to show page</a>
         </div>
        ))}
     </div>

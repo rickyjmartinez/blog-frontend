@@ -9,6 +9,7 @@ import { Login }  from "./Login.jsx";
 import { LogoutLink } from "./LogoutLink.jsx";
 import { Routes, Route } from "react-router-dom"; 
 import { About } from "./About"
+import { PostShowPage } from "./PostShowPage"
 
 export function Content() {
   const [posts, setPosts] = useState([]);
@@ -78,14 +79,16 @@ export function Content() {
     <div className="container">
       <Routes> 
         <Route path="/about" element={<About />} />
+        <Route path="/signup" element={<Signup />}/>
+        <Route path="/logout" element={<LogoutLink />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/posts/new" element={<PostNew onCreatePost={handleCreatePost} />}/>
+        <Route path="/posts" element={<IndexPosts posts={posts}  onShowPost={handleShowPost}/>}/>
+        <Route path="/posts/:id" element={<PostShowPage />} />
       </Routes>
 
-      <Login />
-      <LogoutLink />
-      <Signup />
-      <PostNew onCreatePost={handleCreatePost} />
-      {/* <button onClick={handleIndexPosts}>Get Data</button> */}
-      <IndexPosts posts={posts}  onShowPost={handleShowPost}/>
+
+      
       <Modal show={isPostsShowVisible} onClose={handleClose}>
       <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} /> 
       </Modal>
